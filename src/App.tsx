@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
     id: 1,
     title: "EcoTrack Dashboard",
     description: "A real-time environmental monitoring dashboard built for a school sustainability project.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image: "/images/profile.png",
     tags: ["React", "Tailwind", "D3.js"],
     github: "#",
     demo: "#"
@@ -55,7 +55,7 @@ const PROJECTS: Project[] = [
     id: 2,
     title: "PixelCraft Editor",
     description: "A browser-based sprite editor for game developers, featuring layer support and export options.",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+    image: "/images/profile.png",
     tags: ["TypeScript", "Canvas API", "Redux"],
     github: "#",
     demo: "#"
@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
     id: 3,
     title: "StudySync Mobile",
     description: "Collaborative note-taking app designed to help students organize group projects efficiently.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+    image: "/images/profile.png",
     tags: ["React Native", "Firebase", "Node.js"],
     github: "#",
     demo: "#"
@@ -237,10 +237,10 @@ export default function App() {
             <div className="relative z-10 w-full aspect-square max-w-lg mx-auto rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl">
               {/* 
                 IMAGE FOLDER: /public/images/
-                REPLACE: /public/images/profile.jpg 
+                REPLACE: /images/profile.png 
               */}
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" 
+                src="/images/profile.png" 
                 alt="Anthony" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -291,10 +291,10 @@ export default function App() {
                 <div className="rounded-[2.5rem] overflow-hidden border-8 border-zinc-900 aspect-[9/19] max-w-[320px] mx-auto">
                   {/* 
                     IMAGE FOLDER: /public/images/
-                    REPLACE: /public/images/app-mockup.jpg 
+                    REPLACE: /images/profile.png 
                   */}
                   <img 
-                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800" 
+                    src="/images/profile.png" 
                     alt="App Mockup" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
