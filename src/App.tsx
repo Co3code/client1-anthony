@@ -3,23 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Github, 
-  Instagram, 
-  Facebook, 
-  Mail, 
-  ExternalLink, 
-  Code2, 
-  Palette, 
-  Terminal, 
-  Cpu, 
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Github,
+  Instagram,
+  Facebook,
+  Mail,
+  ExternalLink,
+  Code2,
+  Palette,
+  Terminal,
+  Cpu,
   ChevronRight,
   Send,
   Menu,
-  X
-} from 'lucide-react';
+  X,
+} from "lucide-react";
 
 // --- Types ---
 interface Project {
@@ -46,78 +46,77 @@ const PROJECTS: Project[] = [
     id: 1,
     title: "EcoTrack Dashboard",
     description: "A real-time environmental monitoring dashboard built for a school sustainability project.",
-    image: "/images/profile.png",
+    image: "/images/eco.jpg",
     tags: ["React", "Tailwind", "D3.js"],
     github: "#",
-    demo: "#"
+    demo: "#",
   },
   {
     id: 2,
     title: "PixelCraft Editor",
     description: "A browser-based sprite editor for game developers, featuring layer support and export options.",
-    image: "/images/profile.png",
+    image: "/images/pixel.jpg",
     tags: ["TypeScript", "Canvas API", "Redux"],
     github: "#",
-    demo: "#"
+    demo: "#",
   },
   {
     id: 3,
     title: "StudySync Mobile",
     description: "Collaborative note-taking app designed to help students organize group projects efficiently.",
-    image: "/images/profile.png",
+    image: "/images/study.jpg",
     tags: ["React Native", "Firebase", "Node.js"],
     github: "#",
-    demo: "#"
-  }
+    demo: "#",
+  },
 ];
 
 const EXPERIENCES: Experience[] = [
   {
     id: 1,
-    title: "Lead Developer",
-    organization: "Senior Capstone Project",
+    title: "Team Member",
+    organization: "School Project",
     period: "2024 - Present",
-    description: "Architecting a full-stack web application for local community engagement. Managing a team of 4 students."
+    description: "Worked on building a web application for a class project, helping with coding and testing features.",
   },
   {
     id: 2,
-    title: "UI/UX Designer",
-    organization: "Web Design Workshop",
+    title: "Participant",
+    organization: "School Workshop",
     period: "2023",
-    description: "Developed high-fidelity prototypes for a mobile health tracking app. Focused on accessibility and user flow."
+    description: "Learned and practiced basic UI layout and design while helping with a mobile app project.",
   },
   {
     id: 3,
-    title: "Frontend Contributor",
-    organization: "Open Source School Initiative",
+    title: "Contributor",
+    organization: "School Project",
     period: "2022",
-    description: "Contributed to the development of the school's internal resource portal using modern React patterns."
-  }
+    description: "Assisted in creating a simple web page using React and basic frontend coding for school activities.",
+  },
 ];
-
 const SKILLS = [
-  { name: "Frontend", icon: <Code2 size={20} />, items: ["React", "TypeScript", "Tailwind CSS", "Next.js"] },
-  { name: "Backend", icon: <Terminal size={20} />, items: ["Node.js", "Express", "PostgreSQL", "Firebase"] },
-  { name: "Design", icon: <Palette size={20} />, items: ["Figma", "UI/UX Principles", "Motion Design", "Adobe CC"] },
-  { name: "Tools", icon: <Cpu size={20} />, items: ["Git", "Docker", "Vite", "Linux"] }
+  { name: "Frontend", icon: <Code2 size={20} />, items: ["React", , "Next.js"] },
+  { name: "Backend", icon: <Terminal size={20} />, items: ["Node.js", "Msql"] },
+  { name: "Design", icon: <Palette size={20} />, items: ["UI/UX Principles", "Adobe CC"] },
+  { name: "Tools", icon: <Cpu size={20} />, items: ["Git", "Vite"] },
 ];
 
 /// --- Components ---
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ['About', 'Projects', 'Skills', 'Experience', 'Contact'];
+  const navItems = ["About", "Projects", "Skills", "Experience", "Contact"];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-white/10 px-8 py-4 flex justify-between items-center transition-all duration-300">
       <div className="text-3xl font-cursive gradient-text tracking-normal">Anthony</div>
-      
+
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-10">
         <div className="flex gap-8">
           {navItems.map((item) => (
-            <a 
-              key={item} 
+            <a
+              key={item}
               href={`#${item.toLowerCase()}`}
               className="text-xs font-normal text-zinc-400 hover:text-emerald-400 transition-colors uppercase tracking-widest"
             >
@@ -135,15 +134,15 @@ const Navbar = () => {
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 w-full glass border-b border-white/10 p-8 flex flex-col gap-6 md:hidden"
           >
             {navItems.map((item) => (
-              <a 
-                key={item} 
+              <a
+                key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-bold hover:text-emerald-400"
@@ -160,7 +159,7 @@ const Navbar = () => {
 
 const SectionHeading = ({ title, subtitle }: { title: string; subtitle?: string }) => (
   <div className="mb-16">
-    <motion.h2 
+    <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -169,7 +168,7 @@ const SectionHeading = ({ title, subtitle }: { title: string; subtitle?: string 
       {title}
     </motion.h2>
     {subtitle && (
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -195,32 +194,30 @@ export default function App() {
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-violet-500/10 rounded-full blur-[120px]" />
 
         <div className="container mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
               Available for Freelance
             </div>
             <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] mb-8">
-              Hi, I'm <br /><span className="gradient-text">Anthony</span>
+              Hi, I'm <br />
+              <span className="gradient-text">Anthony</span>
             </h1>
             <p className="text-2xl md:text-3xl text-zinc-300 mb-8 font-light tracking-tight">
-              Creative Developer & <br />Digital Builder
+              Creative Developer & <br />
+              Digital Builder
             </p>
             <p className="text-zinc-500 max-w-lg mb-12 text-lg leading-relaxed">
               I specialize in crafting high-performance digital experiences. Check out my latest app below!
             </p>
             <div className="flex flex-wrap gap-6">
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 className="px-10 py-5 bg-emerald-500 hover:bg-emerald-600 text-black font-black rounded-2xl transition-all glow text-lg uppercase tracking-tighter"
               >
                 View Projects
               </a>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="px-10 py-5 glass hover:bg-white/10 text-white font-bold rounded-2xl transition-all text-lg"
               >
                 Contact Me
@@ -239,9 +236,9 @@ export default function App() {
                 IMAGE FOLDER: /public/images/
                 REPLACE: /images/profile.png 
               */}
-              <img 
-                src="/images/profile.png" 
-                alt="Anthony" 
+              <img
+                src="/images/brobro.jpg"
+                alt="Anthony"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -257,17 +254,15 @@ export default function App() {
       <section id="download" className="py-32 bg-emerald-500/5 border-y border-white/5">
         <div className="container mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="text-emerald-500 font-black uppercase tracking-[0.2em] mb-4">Featured Application</div>
               <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
-                Experience the <br /><span className="gradient-text">Next Generation</span> of Productivity.
+                Simple and Powerful <br />
+                <span className="gradient-text">Timer Application</span>
               </h2>
               <p className="text-zinc-400 text-xl mb-10 leading-relaxed">
-                My latest mobile application designed to streamline your workflow. Built with React Native and high-performance backend systems.
+                A clean and easy-to-use timer app where users can set a specific time and start the countdown. Built
+                with React Native using Expo for smooth performance on Android devices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex items-center justify-center gap-3 px-8 py-4 bg-emerald-500 text-black rounded-2xl font-bold hover:bg-emerald-600 transition-all glow">
@@ -293,9 +288,9 @@ export default function App() {
                     IMAGE FOLDER: /public/images/
                     REPLACE: /images/profile.png 
                   */}
-                  <img 
-                    src="/images/profile.png" 
-                    alt="App Mockup" 
+                  <img
+                    src="/images/timer.jpg"
+                    alt="App Mockup"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
@@ -311,24 +306,22 @@ export default function App() {
       {/* About Section */}
       <section id="about" className="py-32">
         <div className="container mx-auto px-8">
-          <SectionHeading 
-            title="About Me" 
-            subtitle="I'm a student developer with a passion for building things that live on the internet. My journey started with curiosity and has evolved into a dedicated pursuit of engineering excellence."
+          <SectionHeading
+            title="About Me"
+            subtitle="I'm a student developer who enjoys building web and mobile applications. I started with curiosity and now I keep learning by working on real projects."
           />
-          
+
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="space-y-8 text-zinc-400 text-lg">
               <p className="leading-relaxed">
-                As a student, I've spent my time diving deep into the world of web technologies. I love the challenge of taking a complex problem and breaking it down into an elegant, user-friendly solution.
+                As a student, I've spent my time diving deep into the world of web technologies. I love the challenge of
+                taking a complex problem and breaking it down into an elegant, user-friendly solution.
               </p>
               <p className="leading-relaxed">
-                When I'm not coding, you can find me exploring new design trends, contributing to student-led projects, or experimenting with emerging tech like AI and creative coding.
+                When I'm not coding, I usually spend my time playing games, relaxing, and exploring new ideas for future
+                projects.
               </p>
               <div className="flex gap-10 pt-6">
-                <div className="text-left">
-                  <div className="text-4xl font-bold text-white">15+</div>
-                  <div className="text-xs uppercase font-black tracking-widest text-emerald-500 mt-1">Projects</div>
-                </div>
                 <div className="text-left">
                   <div className="text-4xl font-bold text-white">3+</div>
                   <div className="text-xs uppercase font-black tracking-widest text-emerald-500 mt-1">Years</div>
@@ -342,7 +335,7 @@ export default function App() {
 
             <div className="grid grid-cols-2 gap-6">
               {SKILLS.map((skill, idx) => (
-                <motion.div 
+                <motion.div
                   key={skill.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -353,7 +346,12 @@ export default function App() {
                   <div className="text-emerald-400 mb-6 group-hover:scale-110 transition-transform">{skill.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-3">{skill.name}</h3>
                   <ul className="text-sm space-y-2 text-zinc-500">
-                    {skill.items.map(item => <li key={item} className="flex items-center gap-2"><div className="w-1 h-1 bg-emerald-500 rounded-full" />{item}</li>)}
+                    {skill.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <div className="w-1 h-1 bg-emerald-500 rounded-full" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </motion.div>
               ))}
@@ -365,8 +363,8 @@ export default function App() {
       {/* Projects Section */}
       <section id="projects" className="py-32 bg-zinc-950/30">
         <div className="container mx-auto px-8">
-          <SectionHeading 
-            title="Featured Projects" 
+          <SectionHeading
+            title="Featured Projects"
             subtitle="A selection of my recent school and personal projects where I've applied my skills to solve real-world problems."
           />
 
@@ -385,18 +383,24 @@ export default function App() {
                     IMAGE FOLDER: /public/images/
                     REPLACE: /public/images/project-{id}.jpg 
                   */}
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
+                  <img
+                    src={project.image}
+                    alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                     <div className="flex gap-4">
-                      <a href={project.demo} className="p-3 bg-white text-black rounded-2xl hover:bg-emerald-500 transition-colors">
+                      <a
+                        href={project.demo}
+                        className="p-3 bg-white text-black rounded-2xl hover:bg-emerald-500 transition-colors"
+                      >
                         <ExternalLink size={20} />
                       </a>
-                      <a href={project.github} className="p-3 bg-white text-black rounded-2xl hover:bg-emerald-500 transition-colors">
+                      <a
+                        href={project.github}
+                        className="p-3 bg-white text-black rounded-2xl hover:bg-emerald-500 transition-colors"
+                      >
                         <Github size={20} />
                       </a>
                     </div>
@@ -404,8 +408,11 @@ export default function App() {
                 </div>
                 <div className="p-8">
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] uppercase font-black tracking-widest px-3 py-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] uppercase font-black tracking-widest px-3 py-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -422,26 +429,28 @@ export default function App() {
       {/* Experience Section */}
       <section id="experience" className="py-32">
         <div className="container mx-auto px-8">
-          <SectionHeading 
-            title="My Journey" 
+          <SectionHeading
+            title="My Journey"
             subtitle="My path through education and collaborative projects that have shaped my technical foundation."
           />
 
           <div className="max-w-4xl mx-auto space-y-16 relative before:absolute before:left-0 md:before:left-1/2 before:top-0 before:h-full before:w-px before:bg-white/10">
             {EXPERIENCES.map((exp, idx) => (
-              <motion.div 
+              <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`relative flex flex-col md:flex-row gap-12 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                className={`relative flex flex-col md:flex-row gap-12 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-500 border-4 border-[#0a0a0a] z-10 shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
-                
+
                 <div className="md:w-1/2 pl-10 md:pl-0">
-                  <div className={`glass p-10 rounded-[40px] ${idx % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                    <span className="text-xs font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block">{exp.period}</span>
+                  <div className={`glass p-10 rounded-[40px] ${idx % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
+                    <span className="text-xs font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block">
+                      {exp.period}
+                    </span>
                     <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
                     <p className="text-emerald-400 font-medium mb-6">{exp.organization}</p>
                     <p className="text-zinc-500 leading-relaxed">{exp.description}</p>
@@ -458,21 +467,27 @@ export default function App() {
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto glass rounded-[60px] overflow-hidden grid md:grid-cols-2">
             <div className="p-16 bg-emerald-500 text-black">
-              <h2 className="text-5xl font-display font-bold mb-8 leading-tight">Let's build something amazing together.</h2>
+              <h2 className="text-5xl font-display font-bold mb-8 leading-tight">
+                Let's build something amazing together.
+              </h2>
               <p className="text-black/70 mb-16 text-xl leading-relaxed">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
-              
+
               <div className="space-y-8">
                 <div className="flex items-center gap-6">
-                  <div className="p-4 bg-black/10 rounded-2xl"><Mail size={32} /></div>
+                  <div className="p-4 bg-black/10 rounded-2xl">
+                    <Mail size={32} />
+                  </div>
                   <div>
                     <div className="text-xs uppercase font-black opacity-40 tracking-widest">Email Me</div>
                     <div className="text-xl font-bold">anthony@example.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
-                  <div className="p-4 bg-black/10 rounded-2xl"><Github size={32} /></div>
+                  <div className="p-4 bg-black/10 rounded-2xl">
+                    <Github size={32} />
+                  </div>
                   <div>
                     <div className="text-xs uppercase font-black opacity-40 tracking-widest">GitHub</div>
                     <div className="text-xl font-bold">github.com/anthony</div>
@@ -481,8 +496,12 @@ export default function App() {
               </div>
 
               <div className="flex gap-6 mt-20">
-                <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors"><Instagram size={24} /></a>
-                <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors"><Facebook size={24} /></a>
+                <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors">
+                  <Instagram size={24} />
+                </a>
+                <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors">
+                  <Facebook size={24} />
+                </a>
               </div>
             </div>
 
@@ -490,25 +509,31 @@ export default function App() {
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">Name</label>
-                    <input 
-                      type="text" 
+                    <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">
+                      Name
+                    </label>
+                    <input
+                      type="text"
                       placeholder="John Doe"
                       className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-emerald-500 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">Email</label>
-                    <input 
-                      type="email" 
+                    <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">
+                      Email
+                    </label>
+                    <input
+                      type="email"
                       placeholder="john@example.com"
                       className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-emerald-500 transition-colors"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">Message</label>
-                  <textarea 
+                  <label className="block text-xs uppercase tracking-widest text-zinc-500 font-black mb-3">
+                    Message
+                  </label>
+                  <textarea
                     rows={5}
                     placeholder="Tell me about your project..."
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-emerald-500 transition-colors resize-none"
@@ -516,7 +541,10 @@ export default function App() {
                 </div>
                 <button className="w-full py-5 bg-emerald-500 hover:bg-emerald-600 text-black font-black rounded-2xl transition-all flex items-center justify-center gap-3 group text-lg uppercase tracking-tighter">
                   Send Message
-                  <Send size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <Send
+                    size={22}
+                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                  />
                 </button>
               </form>
             </div>
@@ -528,17 +556,20 @@ export default function App() {
       <footer className="py-20 border-t border-white/5">
         <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="text-4xl font-cursive gradient-text tracking-normal">Anthony</div>
-          <div className="text-zinc-500 font-medium">
-            © {new Date().getFullYear()} Anthony. All rights reserved.
-          </div>
+          <div className="text-zinc-500 font-medium">© {new Date().getFullYear()} © 2026 AC. All rights reserved. Crafted with care.</div>
           <div className="flex gap-8">
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Github size={24} /></a>
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Instagram size={24} /></a>
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Facebook size={24} /></a>
+            <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <Github size={24} />
+            </a>
+            <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <Instagram size={24} />
+            </a>
+            <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <Facebook size={24} />
+            </a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
