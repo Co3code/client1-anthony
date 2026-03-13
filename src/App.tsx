@@ -264,14 +264,22 @@ export default function App() {
                 A clean and easy-to-use timer app where users can set a specific time and start the countdown. Built
                 with React Native using Expo for smooth performance on Android devices.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex items-center justify-center gap-3 px-8 py-4 bg-emerald-500 text-black rounded-2xl font-bold hover:bg-emerald-600 transition-all glow">
-                  <Terminal size={24} />
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase opacity-60 leading-none">Direct Download</div>
-                    <div className="text-lg leading-none">Download APK</div>
-                  </div>
-                </button>
+                <a
+                  href="https://github.com/Co3code/Timer-Gamutan/releases/download/v1.0.0.0/timer.apk"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="flex items-center justify-center gap-3 px-8 py-4 bg-emerald-500 text-black rounded-2xl font-bold hover:bg-emerald-600 transition-all glow">
+                    <Terminal size={24} />
+                    <div className="text-left">
+                      <div className="text-[10px] uppercase opacity-60 leading-none">Direct Download</div>
+                      <div className="text-lg leading-none">Download APK</div>
+                    </div>
+                  </button>
+                </a>
               </div>
             </motion.div>
 
@@ -556,7 +564,9 @@ export default function App() {
       <footer className="py-20 border-t border-white/5">
         <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="text-4xl font-cursive gradient-text tracking-normal">Anthony</div>
-          <div className="text-zinc-500 font-medium">© {new Date().getFullYear()} © 2026 AC. All rights reserved. Crafted with care.</div>
+          <div className="text-zinc-500 font-medium">
+            © {new Date().getFullYear()} © 2026 AC. All rights reserved. Crafted with care.
+          </div>
           <div className="flex gap-8">
             <a href="#" className="text-zinc-500 hover:text-white transition-colors">
               <Github size={24} />
