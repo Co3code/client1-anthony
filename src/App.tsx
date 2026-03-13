@@ -257,17 +257,17 @@ export default function App() {
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="text-emerald-500 font-black uppercase tracking-[0.2em] mb-4">Featured Application</div>
               <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">
-                Simple and Powerful <br />
-                <span className="gradient-text">Timer Application</span>
+                Simple Timer <br />
+                <span className="gradient-text">Mobile App</span>
               </h2>
               <p className="text-zinc-400 text-xl mb-10 leading-relaxed">
-                A clean and easy-to-use timer app where users can set a specific time and start the countdown. Built
-                with React Native using Expo for smooth performance on Android devices.
+                A simple timer app with Start and Reset buttons that tracks elapsed time. Built using React Native with
+                Expo for smooth performance on Android devices
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://github.com/Co3code/Timer-Gamutan/releases/download/v1.0.0.0/timer.apk"
+                  href="https://github.com/Co3code/Timer-Gamutan/releases/download/v1.0.01/timerv2.apk"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
@@ -297,7 +297,7 @@ export default function App() {
                     REPLACE: /images/profile.png 
                   */}
                   <img
-                    src="/images/timer.jpg"
+                    src="/images/app.jpg"
                     alt="App Mockup"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -489,7 +489,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-xs uppercase font-black opacity-40 tracking-widest">Email Me</div>
-                    <div className="text-xl font-bold">anthony@example.com</div>
+                    <div className="text-xl font-bold">anthonygamutan1@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -507,7 +507,10 @@ export default function App() {
                 <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors">
                   <Instagram size={24} />
                 </a>
-                <a href="#" className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61581225014045"
+                  className="p-4 bg-black/10 rounded-full hover:bg-black/20 transition-colors"
+                >
                   <Facebook size={24} />
                 </a>
               </div>
@@ -574,7 +577,10 @@ export default function App() {
             <a href="#" className="text-zinc-500 hover:text-white transition-colors">
               <Instagram size={24} />
             </a>
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+            <a
+              href="https://www.facebook.com/profile.php?id=61581225014045"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
               <Facebook size={24} />
             </a>
           </div>
